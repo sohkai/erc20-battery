@@ -1,0 +1,12 @@
+# Dependencies
+node_modules
+
+# build artifacts
+cache
+artifacts
+
+# yarn
+yarn-error.log
+
+# Ignore package-lock files (only use yarn.lock)
+package-lock.json

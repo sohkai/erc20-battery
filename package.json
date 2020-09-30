@@ -1,0 +1,23 @@
+{
+  "name": "erc20-battery",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/sohkai/erc20-battery",
+  "scripts": {
+    "console": "buidler console",
+    "compile": "buidler compile --force",
+    "lint": "solium --dir ./contracts",
+    "test": "buidler test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.4.3",
+    "@nomiclabs/buidler-ganache": "^1.3.3",
+    "@nomiclabs/buidler-truffle5": "^1.3.4",
+    "@nomiclabs/buidler-web3": "^1.3.4",
+    "chai": "^4.2.0",
+    "cli-table": "^0.3.1",
+    "web3": "^1.2.11"
+  }
+}
