@@ -2,12 +2,22 @@ const Table = require('cli-table')
 const { bn, MAX_UINT256, ONE } = require('./lib/number')
 const runInstrumentedTokenTests = require('./lib/token')
 
+const ANTv2 = artifacts.require('ANTv2')
 const Comp = artifacts.require('Comp')
 const Uni = artifacts.require('Uni')
 const UniLpV2 = artifacts.require('UniLpV2')
 const Yfi = artifacts.require('YFI')
 
 const suite = [
+  [
+    'ANTv2',
+    async (minter) => {
+      const token = await ANTv2.new('1', minter)
+      await token.mint(minter, ONE.mul(bn(10)), { from: minter })
+
+      return token
+    }
+  ],
   [
     'Comp',
     async (minter) => {

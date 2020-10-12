@@ -16,7 +16,9 @@ module.exports = {
     },
   },
   solc: {
-    version: '0.5.16',
+    // Tokens may have originally been deployed with a separate compiler version, but we use the
+    // same one here to rule out any differences.
+    version: '0.5.17',
     optimizer: {
       enabled: true,
       // Align all tokens to have the same optimization settings, to rule out any differences.
