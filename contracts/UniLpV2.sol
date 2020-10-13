@@ -1,4 +1,5 @@
-pragma solidity =0.5.16;
+// Note that the original UNI-LP was compiled under 0.5.16
+pragma solidity =0.5.17;
 
 // a library for performing overflow-safe math, courtesy of DappHub (https://github.com/dapphub/ds-math)
 
