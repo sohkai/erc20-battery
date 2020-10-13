@@ -7,8 +7,8 @@
   "scripts": {
     "console": "buidler console",
     "compile": "buidler compile --force",
-    "lint": "solium --dir ./contracts",
-    "test": "buidler test"
+    "compile:4": "buidler compile --force --config buidler.config.4.js",
+    "test": "yarn compile:4 && buidler test"
   },
   "dependencies": {},
   "devDependencies": {
