@@ -1,7 +1,9 @@
 const Table = require('cli-table')
+const { ZERO_ADDRESS } = require('./lib/address')
 const { bn, MAX_UINT256, ONE } = require('./lib/number')
 const runInstrumentedTokenTests = require('./lib/token')
 
+const ANTv1 = artifacts.require('ANTv1')
 const ANTv2 = artifacts.require('ANTv2')
 const Comp = artifacts.require('Comp')
 const Uni = artifacts.require('Uni')
@@ -9,6 +11,15 @@ const UniLpV2 = artifacts.require('UniLpV2')
 const Yfi = artifacts.require('YFI')
 
 const suite = [
+  [
+    'ANTv1',
+    async (minter) => {
+      const token = await ANTv1.new(ZERO_ADDRESS, { from: minter })
+      await token.generateTokens(minter, ONE.mul(bn(10)), { from: minter })
+
+      return token
+    }
+  ],
   [
     'ANTv2',
     async (minter) => {

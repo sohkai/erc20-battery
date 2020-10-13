@@ -3,6 +3,7 @@ const { usePlugin } = require('@nomiclabs/buidler/config')
 usePlugin("@nomiclabs/buidler-ganache")
 usePlugin('@nomiclabs/buidler-truffle5')
 
+// Default buidler plugin with support for solc 5
 module.exports = {
   networks: {
     // Local development network using ganache. You can set any of the
@@ -26,4 +27,7 @@ module.exports = {
       runs: 999999,
     },
   },
+  paths: {
+    sources: "./contracts/5",
+  }
 }
