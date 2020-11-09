@@ -23,7 +23,7 @@ const suite = [
   [
     'ANTv2',
     async (minter) => {
-      const token = await ANTv2.new('1', minter)
+      const token = await ANTv2.new(minter)
       await token.mint(minter, ONE.mul(bn(10)), { from: minter })
 
       return token
